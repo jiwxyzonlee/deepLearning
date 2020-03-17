@@ -29,6 +29,7 @@ print('절편 : ', model.intercept_)
 
 # 산점도 그래프 출력
 plt.scatter(x, y, marker='+')
+# 회귀함수: y = 3x - 2
 
 # 오차가 없는 y = 3x – 2 예측결과 그래프
 plt.show()
