@@ -1,0 +1,30 @@
+overfitting
+
+train loss < test loss
+data가 부족해서 일어남
+
+underfitting
+train loss > test loss
+
+학습시킬 때 거의 매번 겪게 됨
+
+경험적으로 조정해야
+
+학습률: 가중치가 변경되는 정도
+
+epochs: 모든 데이터가 업데이트 되는 때(그러나 한 번만으로는 학습되지 않음)
+
+200개의 데이터, 1000 epochs : 데이터 20만 번 학습
+
+batch_size는 GPU에 해당, 오버로드 예방
+
+DNN 함수 근사화
+
+model = keras.Sequential()
+#model.add(Input(1))
+model.add(Dense(10, activation='tanh', input_shape=(1,) )) #케라스 코드는 보통 이렇게 씀
+model.add(Dense(10, activation='tanh' ))
+model.add(Dense(1))
+
+
+파라미터 계수 천 만 개
