@@ -1,0 +1,59 @@
+GAN 이해하기
+
+- image translation
+
+DNN (입력)
+- DNN(입력&출력)
+
+
+===========MNIST --------DNN.1(1.y) [: Discriminator]
+noise - DNN.2 [: Generator]-image(MNIST 사이즈와 같음)-[]--DNN.1(0)
+noise.x - DNN.2 [: Generator].A-image(MNIST 사이즈와 같음)-[].z--DNN.1.B(1)
+
+Discriminator(1)출력 - MNIST와 진짜 같은 것을 생성하라고 Generator를 학습해야 함
+
+MNIST-(B)-y(1)
+x-(A)-(B)-y(0)
+z-(B)-y
+x-(A)-z-(B)(고정)-y(1)
+x-(A: Generator, 위조 능력 늘어남)-z-(B: Discriminator, 감별 능력 늘어남)(고정)-y(1)
+x-(A)-z(MNIST 같은 것)
+
+x1===========2===y1
+    - [ + ] - z - [ % ] -
+x2===========3===y2
+===[ + ]부분 학습
+
+x-z-y
+z-y(A)-x
+x-(B)[학습]-(A)-y
+x-(B)-z
+
+- 응용이 아직 적음
+- 실습도 학습시키는 코드만 파악하고 넘어가는 정도
+- 실생활에서 사용하는 건 한번 더 단계가 필요함
+
+- 출력이 다양하지 않은 게 단점(mode collapse)
+-- Discriminator에 condition 설정 필요(Generator도 정보전달 조건 같이 설정 -> 생성control 가능)
+- GAN을 사용한 inpating
+- ex) mnist 3 (점 세 개, 선분 4개만 남도록 반 가름)
+- nvidia에서 실시간으로 이미지 자동으로 수정해주는 프로그램의 바탕
+- GAN을 사용한 노이즈 제거
+- 학습은 되나 성공률이 낮은 게 단점
+- 학습이 잘되는 구조를 누가 찾아냄 - DCGAN(오늘 실습 사용), WGAN, WGAN-PG(실무에서 많이 사용) ->> 이유는 설명하지 못함
+
+
+Cycle GAN
+
+- 예) 말이 돌아다니는 영상을 얼룩말이 돌아다니는 영상으로 바꿈
+- unpaired
+
+[GAN]
+x - Generator - z - Discriminator - y
+
+[Cycle GAN]
+x - Generator - z - F - x - Discriminator - 출력 (x와 생성된 값이 차이가 없도록 제약 Function)
+- 영상 변환(그림과 사진)
+- 딥페이크
+- 쇼핑몰에 쓰면 좋겠다
+
