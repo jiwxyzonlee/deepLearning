@@ -1,0 +1,34 @@
+
+*
+앙상블 
+
+여러 개의 방법들을 결과들을 보고 한꺼번에 사용하는 기법
+현실에서는 모두 앙상블 씀
+
+모델 마다 나오는 수치(아마 R스퀘어?혹은 accuracy) 중 최댓값, 최솟값을 정하거나 평균을 낸 값으로 기준치 설정
+
+(논문리뷰 ppt에 나오는 논문 중 하나는)보통 앙상블은 결과 취합인데 DNN을 통해서 앙상블 로직을 다시 학습시킨 경우도 있음(성능 향상시킴)
+
+*
+피처를 다시 받아 입력으로 학습 이용 가능
+
+영상과 다른 값을 어떻게 처리하나
+데이터가 너무 클 때 어떻게 처리하나
+
+** kaggle
+*
+confusion matrix 나온 값을 가지고 성능 개선 방법 고민해볼 수 있음
+
+*
+Principle Component Analysis
+다차원을 2차원 이하를 줄이는 것 같은 차원 축소 기법(대부분 그림 그리는 데 사용)
+R-SHE
+군집되어 있는 결과를 보고 추가적으로 모델 분류 방법을 개선하는 데 고민해볼 수 있음
+
+*
+https://plotly.com/python/plotly-express/
+
+https://www.kaggle.com/corochann/covid-19-eda-with-recent-update-on-april
+
+*
+
